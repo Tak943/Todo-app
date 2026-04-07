@@ -19,6 +19,14 @@ export class TodoListModel extends EventEmitter{
     }
 
     /**
+     * 表示できるTodoItemの配列を返す
+     * @returns {TodoItemModel[]}
+     */
+    getTodoItems(){
+        return this.#items;
+    }
+
+    /**
      * TodoListの状態が更新されたときに呼び出されるリスナー関数を登録する
      * @param {Function} listener
      */
