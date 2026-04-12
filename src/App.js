@@ -62,8 +62,9 @@ export class App {
 
         formElement.addEventListener("submit", (event) => {
             event.preventDefault();
+            if (inputElement.value === "") {alert("An item is empty!");}
             //新しいTodoItemをTodoListへ追加する
-            this.handleAdd(inputElement.value);
+            else {this.handleAdd(inputElement.value);}
             inputElement.value = "";
         });
     }
