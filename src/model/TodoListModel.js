@@ -75,4 +75,12 @@ export class TodoListModel extends EventEmitter{
         });
         this.emitChange();
     }
+
+    /**
+     * completeされたらアイテム数が減る
+     * @param {boolean}
+     */
+    //completeTodo({completed}){
+        
+    //}
 }

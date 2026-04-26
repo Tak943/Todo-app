@@ -1,5 +1,5 @@
 //console.log("App.js: loaded");
-import {render} from "./view/html-util.js";
+import {element, render} from "./view/html-util.js";
 import {TodoItemModel} from "./model/TodoItemModel.js";
 import {TodoListModel} from "./model/TodoListModel.js";
 import { TodoListView } from "./view/TodoListView.js";
@@ -67,33 +67,12 @@ export class App {
             else {this.handleAdd(inputElement.value);}
             inputElement.value = "";
         });
+
+        const saveElement = document.querySelector("#js-save");
+        saveElement.addEventListener("click", () => { 
+            localStorage.setItem();
+            
+            alert("Your TODO is saved!");
+        });
     }
 }
-
-/*const item = new TodoItemModel({
-    title: "未完了のTodoアイテム",
-    completed: false
-});
-const completedItem = new TodoItemModel({
-    title: "完了済みのアイテム",
-    completed: true
-});
-console.log(item.id !== completedItem.id);
-*/
-
-/*
-//新しいTodoリストを作成する
-const todoListModel = new TodoListModel();
-console.log(todoListModel.getTotalCount());
-// Todoリストが変更されたら呼ばれるイベントリスナーを登録する
-todoListModel.onChange(() => {
-    console.log("TodoListの状態が変わりました");
-});
-//新しいTodoアイテムを追加
-todoListModel.addTodo(new TodoItemModel({
-    title: "新しいTodoアイテム",
-    completed: false
-}));
-// Todoリストにアイテムが増える
-console.log(todoListModel.getTotalCount()); // => 1
-*/
